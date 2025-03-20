@@ -1,11 +1,11 @@
 const env=require('dotenv').config();
 const app=require('./app')
 const DB=require('./DB/mongoDB.connection')
-
+const port = process.env.PORT || 4000;
 DB()
 .then(()=>{
-    app.listen(3000,()=>{
-        console.log("server is running at 3000 PORT")
+    app.listen(port,()=>{
+        console.log(`server is running at ${port}`)
     })
 })
 

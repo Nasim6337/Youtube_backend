@@ -11,6 +11,12 @@ app.use(express.json());
 app.use(cookieParser())
 app.use(cors({origin:'*'}));
 
+app.get('/check',(req,res)=>{
+  res.status(200).json({
+    "status":200,
+    "message":"everything is ok"
+  })
+});
 app.use('/api-v1/user',Userroutes);
 
 app.use('/api-v1/video',Videoroutes);

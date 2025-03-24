@@ -9,7 +9,12 @@ const Likeroutes=require('./routes/Like-routes')
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cookieParser())
-app.use(cors({origin:'*'}));
+
+app.use(cors({
+    origin: '*', 
+    credentials: true;
+}));
+
 
 app.get('/check',(req,res)=>{
   res.status(200).json({
